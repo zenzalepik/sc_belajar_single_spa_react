@@ -1,0 +1,14 @@
+{
+    "name": "single-spa",
+    "scripts": {
+      "start": "concurrently \"npm run start:root\" \"npm run start:appBar\" \"npm run start:mainBody\" \"npm run start:footerBody\"",
+      "start:root": "cd ./root && npm start", 
+      "start:appBar": "cd ./appBar && npm run start:standalone", 
+      "start:mainBody": "cd ./mainBody && npm run start:standalone",
+      "start:footerBody": "cd ./footerBody && npm run start:standalone"
+    },
+    "devDependencies": {
+      "concurrently": "^9.1.0"
+    }
+  }
+  
