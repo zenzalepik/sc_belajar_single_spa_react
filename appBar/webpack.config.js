@@ -10,6 +10,11 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
+    devServer: {
+      port: 8001, // Tentukan port yang diinginkan
+      open: true, // Membuka browser otomatis saat server dijalankan
+      hot: true,  // Aktifkan Hot Module Replacement (HMR)
+      historyApiFallback: true, // Menangani routing untuk aplikasi SPA
+    },
   });
 };
